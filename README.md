@@ -19,7 +19,7 @@ Once downloaded run the following commands to install and start the application.
 ```bash
 npm install
 
-npm start
+npm run start
 ```
 
 
