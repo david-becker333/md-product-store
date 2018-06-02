@@ -1,0 +1,28 @@
+
+
+.main-menu {
+    ul {
+        color: red;
+    }
+}
+
+.main-container {
+    display: flex;
+
+    .side-nav-container {
+        width: 200px;
+        padding: 20px 0;
+    }
+    .main-content {
+        padding: 15px;
+        flex: 1;
+    }
+
+}
+
+.dashboard {
+   .product-card {
+       min-width: 250px;
+       margin: 15px;
+   }
+}
