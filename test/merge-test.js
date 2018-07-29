@@ -1,16 +1,16 @@
 
 function add(a, b) {
-    pass
+    return
 }
 
 function subtract(a, b) {
-    pass
+    return
 }
 
 function multiply(a, b) {
-    pass
+    return
 }
 
 function divide(a, b) {
-    pass
+    return
 }
