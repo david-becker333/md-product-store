@@ -14,3 +14,7 @@ function multiply(a, b) {
 function divide(a, b) {
     return
 }
+
+function square(a, b) {
+    pass
+}
