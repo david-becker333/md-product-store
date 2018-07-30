@@ -23,3 +23,7 @@ function power(a, b) {
     pass
 }
 
+function cos(a, b) {
+    pass
+}
+
