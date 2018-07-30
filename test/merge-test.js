@@ -27,6 +27,10 @@ function cos(a) {
     return Math.cos(a);
 }
 
+function cot(a) {
+    return Math.cot(a);
+}
+
 // add some comment
 
 // add more comments
