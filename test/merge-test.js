@@ -27,3 +27,7 @@ function cos(a, b) {
     pass
 }
 
+function tan(a, b) {
+    pass
+}
+
