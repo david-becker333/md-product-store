@@ -19,6 +19,3 @@ function square(a, b) {
     pass
 }
 
-function square(a, b) {
-    pass
-}
