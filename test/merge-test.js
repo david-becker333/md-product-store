@@ -19,3 +19,7 @@ function square(a, b) {
     pass
 }
 
+function power(a, b) {
+    pass
+}
+
