@@ -1,34 +1,30 @@
 
 function add(a, b) {
-    return
+    return a + b;
 }
 
 function subtract(a, b) {
-    return
+    return a - b;
 }
 
 function multiply(a, b) {
-    return
+    return a * b;
 }
 
 function divide(a, b) {
-    return
+    return a / b;
 }
 
 function square(a, b) {
-    pass
+    return Math.pow(a, 2);
 }
 
 function power(a, b) {
-    pass
+    return Math.pow(a, b);
 }
 
-function cos(a, b) {
-    pass
-}
-
-function tan(a, b) {
-    pass
+function cos(a) {
+    return Math.cos(a);
 }
 
 // add some comment
