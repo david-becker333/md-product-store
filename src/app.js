@@ -6,16 +6,16 @@ import productReducer from './shared/reducer/index';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import { HashRouter as Router, history } from 'react-router-dom';
 import { Route, Link, IndexRoute, Redirect } from 'react-router-dom';
-import localeData from 'locale-data';
+//import localeData from 'locale-data';
 import Main from './components/layout/main-layout';
 import store from './shared/store';
 
 
 // adds the locale messages
-addLocaleData(localeData);
+//addLocaleData(localeData);
 
 // get the locale and messages props
-const { locale, messages } = __I18N__;
+//const { locale, messages } = __I18N__ || 'en_US';
 
 
 export default class App extends React.Component {
@@ -27,16 +27,16 @@ export default class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <IntlProvider
+              {/* <IntlProvider
                     locale={locale}
-                    messages={messages}>
+                    messages={messages}> */} 
                     <Router history={history}>
                         <div>
                             <Route path="/" exact component={Default}/>
                             <Route path="/" component={Main}/>
                         </div>
                     </Router>
-                </IntlProvider>
+               {/* </IntlProvider> */} 
             </Provider>
         )
     }

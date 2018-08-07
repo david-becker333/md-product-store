@@ -27,7 +27,7 @@ export default class Dashboard extends React.Component {
             <div className="dashboard">
                 <div className="d-sm-inline-flex">
                     {products && products.map((product, i) => {
-                        return (<ProductCard item={product} />)
+                        return (<ProductCard key={i} item={product} />)
                     })}
                 </div>
             </div>

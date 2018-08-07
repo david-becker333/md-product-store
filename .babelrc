@@ -7,6 +7,10 @@
       "enforceDescriptions": true,
       "fileName": "en-US",
       "messagesDir": "./i18n/"
+    }],
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
     }]
   ]
 }
