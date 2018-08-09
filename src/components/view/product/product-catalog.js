@@ -1,33 +1,52 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { products } from '../../../shared/reducer/products';
 
-import ProductService from '../../../shared/service/product-service';
-
-export default class ProductCatalog extends React.Component {
-
-    _productService = new ProductService();
+class ProductCatalog extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {};
     }
 
-    async componentWillMount() {
-        let response = await this._productService.findProducts();
-        let data = await response.json();
-        this.setState({
-            products: data.groups ? data.groups : []
-        });
+    componentWillMount() {
+        this.props.fetchProductsData();
     }
 
     render() {
-        const { products } = this.state;
         return (
             <div>
-                <ProductTable items={products} />
+                <select onChange={this.handleProductSelectionChange}>{this.listProductsAsOptionList()}</select>
+                <ProductTable items={ this.props.products } />
             </div>
         );
     }
+
+    handleProductSelectionChange = (event) => {
+         console.log("value: ", event.target.value);
+    }
+
+    listProductsAsOptionList() {
+        return (
+             this.props.products.map((item, index) => {
+            return <option key={index} value={item.name}>{item.name}</option> 
+        }))
+    }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        products: state.products.products
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchProductsData: (params) => dispatch(products(params))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCatalog);
 
 
 const ProductTable = (props) => {

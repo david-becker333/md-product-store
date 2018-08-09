@@ -1,12 +1,7 @@
 
-import { combineReducers } from 'redux';
-import productReducer from './product-reducer';
+import { reducer as applicationReducer } from './application';
+import { reducer as productReducer } from './products';
 
 
-const appReducer = combineReducers(
-  {
-    product: productReducer
-  });
-
-export default appReducer;
+export { applicationReducer, productReducer };
 

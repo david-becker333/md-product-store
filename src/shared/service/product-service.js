@@ -6,7 +6,11 @@ export default class ProductService {
     constructor() {
     }
 
-    findProducts() {
+    findProducts(params) {
+        return fetch(this.baseApiUrl + '/products.json');
+    }
+
+    findProductAdds(params) {
         return fetch(this.baseApiUrl + '/products.json');
     }
 

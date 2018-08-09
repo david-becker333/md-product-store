@@ -1,32 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { productAdds } from '../../../shared/reducer/products';
 
-import ProductService from '../../../shared/service/product-service';
-
-export default class Dashboard extends React.Component {
-
-    _productService = new ProductService();
+class Dashboard extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {};
-        console.log("dashboard")
     }
 
-    async componentWillMount() {
-        let response = await this._productService.findProducts();
-        let data = await response.json();
-        this.setState({
-            products: data.groups ? data.groups.slice(0, 3) : []
-        });
-
+    componentWillMount() {
+        this.props.fetchProductAddsData();
     }
 
     render() {
-        const { products } = this.state;
+        console.log("props: ", this.props)
+        const { productAdds } = this.props;
         return (
             <div className="dashboard">
                 <div className="d-sm-inline-flex">
-                    {products && products.map((product, i) => {
+                    {productAdds && productAdds.map((product, i) => {
                         return (<ProductCard key={i} item={product} />)
                     })}
                 </div>
@@ -34,6 +27,20 @@ export default class Dashboard extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        productAdds: state.products.productAdds
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchProductAddsData: (params) => dispatch(productAdds(params))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 
 
 export const ProductCard = (props) => {

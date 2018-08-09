@@ -1,15 +1,15 @@
 import React from 'react';
-
 import { Provider } from 'react-redux';
-
-import productReducer from './shared/reducer/index';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import { HashRouter as Router, history } from 'react-router-dom';
 import { Route, Link, IndexRoute, Redirect } from 'react-router-dom';
+
 //import localeData from 'locale-data';
 import Main from './components/layout/main-layout';
-import store from './shared/store';
+import { configureStore, combineReducers } from './shared/store';
 
+// configure the redux store
+const store = configureStore();
 
 // adds the locale messages
 //addLocaleData(localeData);
